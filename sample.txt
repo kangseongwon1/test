@@ -1,4 +1,6 @@
 monkey make this wow, it's so simple!
 add the change thing 
 commit index status write
+pull remote repo pull 
+
 
