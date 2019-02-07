@@ -1,3 +1,4 @@
 monkey make this wow, it's so simple!
-add the change thing 
+add the change thing
+pull remote repo pull 
 
