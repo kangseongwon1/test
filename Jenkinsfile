@@ -7,7 +7,7 @@ pipeline {
         steps {
             git credentialsId: 'repo-and-hook-access-token-credentials',
                 url: 'https://github.com/kangseongwon1/test.git',
-                branch: 'main'
+                branch: 'master'
         }
         post {
                 failure {
