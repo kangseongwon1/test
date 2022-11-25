@@ -14,3 +14,6 @@ node {
      }
 }
 
+stage('Build image') {
+  app = docker.build("172.30.5.156/admin/flask-example")
+}
