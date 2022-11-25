@@ -17,3 +17,11 @@ node {
 stage('Build image') {
   app = docker.build("172.30.5.156/admin/flask-example")
 }
+
+stage('Push image') {
+  docker.withRegistry('https://172.30.5.156', 'harbor-cred') 
+  {
+     app.push("${env.BUILD_NUMBER}")
+     app.push("latest")
+  }
+}
