@@ -12,7 +12,7 @@ FROM openjdk:11-slim
 
 COPY --from=builder build/libs/*.jar springboot-sample-app.jar
 VOLUME /tmp
-EXPOSE 8080
+EXPOSE 8080,8081
 # builder를 통해 생성된 jar 파일을 이미지로 가져옵니다.
 # 8080 포트를 공개한다고 명시합니다.
 
