@@ -3,7 +3,7 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("github.com/kangseongwon1/dockerproject")
+         app = docker.build("github.com/kangseongwon1/test")
          
      }
      stage('Push image') {
@@ -15,7 +15,7 @@ node {
 }
 
 stage('Build image') {
-  app = docker.build("github.com/kangseongwon1/dockerproject")
+  app = docker.build("github.com/kangseongwon1/test")
 }
 
 stage('Push image') {
