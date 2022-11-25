@@ -17,6 +17,18 @@ pipeline {
                   echo 'Repository clone success !'
                 }
         }
+     stage('Build Dockerfile') {
+        steps {
+             app = docker.build("github.com/kangseongwon1/test")
+        }
+        post {
+                failure {
+                  echo 'Docker Build test fail !'
+                }
+                success {
+                  echo 'Docker Build test success !'
+                }
+        }     
     }
   }
   
