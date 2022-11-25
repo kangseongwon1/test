@@ -1,17 +1,24 @@
-node {
-     stage('Clone repository') {
-         checkout scm
-     }
-     stage('Build image') {
-         app = docker.build("github.com/kangseongwon1/test")
-         
-     }
-     stage('Push image') {
-         docker.withRegistry('https://github.com/kangseongwon1', 'repo-and-hook-access-token-credentials') {
-             app.push("${env.BUILD_NUMBER}")
-             app.push("latest")
-         }
-     }
-}
+pipeline {
+  agent any
 
+  stages {
+
+    stage('Checkout Application Git Branch') {
+        steps {
+            git credentialsId: 'repo-and-hook-access-token-credentials',
+                url: 'https://github.com/best-branch/my-app.git',
+                branch: 'main'
+        }
+        post {
+                failure {
+                  echo 'Repository clone failure !'
+                }
+                success {
+                  echo 'Repository clone success !'
+                }
+        }
+    }
+  }
+  
+}
 
