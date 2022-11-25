@@ -6,7 +6,7 @@ pipeline {
     stage('Checkout Application Git Branch') {
         steps {
             git credentialsId: 'repo-and-hook-access-token-credentials',
-                url: 'https://github.com/kangseongwon1/test',
+                url: 'https://github.com/kangseongwon1/test.git',
                 branch: 'main'
         }
         post {
