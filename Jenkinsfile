@@ -8,7 +8,7 @@ node {
      }
      stage('Push image') {
          docker.withRegistry('https://github.com/kangseongwon1', 'repo-and-hook-access-token-credentials') {
-#             app.push("${env.BUILD_NUMBER}")
+
              app.push("latest")
          }
      }
@@ -21,7 +21,7 @@ stage('Build image') {
 stage('Push image') {
   docker.withRegistry('https://github.com/kangseongwon1', 'repo-and-hook-access-token-credentials') 
   {
-#     app.push("${env.BUILD_NUMBER}")
+
      app.push("latest")
   }
 }
